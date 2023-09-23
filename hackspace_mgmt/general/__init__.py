@@ -1,5 +1,5 @@
 from flask_admin import Admin, AdminIndexView
-from . import enroll_card
+from . import enroll_card, self_induction
 
 general = Admin(
     None,
@@ -13,3 +13,4 @@ general = Admin(
 )
 
 enroll_card.create_views(general)
+self_induction.create_views(general)

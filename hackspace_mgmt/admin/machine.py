@@ -1,12 +1,11 @@
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from hackspace_mgmt.models import db, Machine, MachineController
-from flask_admin.model.form import InlineFormAdmin
 
 
 class MachineView(ModelView):
     column_searchable_list = ['name']
-    column_list = ('name', 'controllers')
+    column_list = ('name', 'legacy_auth', 'legacy_password', 'controllers')
     inline_models = (MachineController,)
     form_excluded_columns = ('inductions',)
     column_formatters = dict()
